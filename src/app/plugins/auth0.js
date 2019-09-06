@@ -1,5 +1,5 @@
 import Auth0Lock from 'auth0-lock'
-import nuxtConfig from '~/nuxt.config'
+import nuxtConfig from '../../nuxt.config'
 const config = nuxtConfig.auth0
 
 class Auth0Util {

@@ -1,11 +1,3 @@
-# Add auth0-lock
-## 1. install library
-```bash
-yarn add auth0-lock
-```
-## 2. Use Lock
-plugins/auth0.js
-```js
 import Auth0Lock from 'auth0-lock'
 import nuxtConfig from '~/nuxt.config'
 const config = nuxtConfig.auth0
@@ -36,18 +28,6 @@ class Auth0Util {
 }
 
 export default (context, inject) => {
+  // inject を利用することで、Vue Component の内部では this.$auth() 経由でこのユーティリティクラスの呼び出しが可能になる
   inject('auth0', new Auth0Util)
 }
-
-```
-## 3. Added use of auth0
-nuxt.config.js
-```js
-plugins: [
-  '~/plugins/auth0.js'
-],
-auth0: {
-  domain: 'AUTH0_DMAIN',
-  clientID: 'AUTH0_CLIENT_ID'
-},
-```
